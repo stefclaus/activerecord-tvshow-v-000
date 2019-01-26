@@ -30,7 +30,8 @@ class Show < ActiveRecord::Base
 
   def self.popular_shows
     #popular_shows: returns an array of all of the shows that have a rating greater than 5. hint: use the where Active Record method.
-    Show.where(:rating > 5)
+    Show.where("rating > ?", 5)
+    User.where("id > ?", 200)
   end
 
   def self.shows_by_alphabetical_order
